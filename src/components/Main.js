@@ -13,7 +13,6 @@ import Fade from '@material-ui/core/Fade';
 import Slide from '@material-ui/core/Slide';
 import Chip from '@material-ui/core/Chip';
 import Avatar from '@material-ui/core/Avatar';
-import Background from './assets/footer-background.svg';
 import * as Scroll from 'react-scroll';
 import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
  

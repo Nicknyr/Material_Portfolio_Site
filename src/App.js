@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
-import Hero from './Hero';
-import Navbar from './Navbar';
-import Main from './Main';
-import Footer from './Footer';
+import Hero from './components/Hero';
+import Navbar from './components/Navbar';
+import Main from './components/Main';
+import Portfolio from './components/Portfolio';
+import Footer from './components/Footer';
 import { ThemeProvider } from '@material-ui/core/styles';
 import Theme from './Theme';
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -18,6 +19,7 @@ function App() {
         <Navbar />
         <Hero />
         <Main />    
+        <Portfolio />
         <Footer />  
     </ThemeProvider>
   );

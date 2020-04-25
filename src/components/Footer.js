@@ -1,5 +1,5 @@
 import React from 'react';
-import Background from './assets/footer-background.svg';
+import Background from '../assets/footer-background.svg';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
