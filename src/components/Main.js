@@ -15,7 +15,8 @@ import Chip from '@material-ui/core/Chip';
 import Avatar from '@material-ui/core/Avatar';
 import * as Scroll from 'react-scroll';
 import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
- 
+import ScrollAnimation from 'react-animate-on-scroll';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -49,7 +50,11 @@ const useStyles = makeStyles((theme) => ({
         //background: theme.palette.secondary.contrast,
         background: theme.palette.secondary.darkBlack,
         color: theme.palette.primary.main,
-        margin: theme.spacing(1)
+        margin: theme.spacing(1),
+        fontWeight: 'bold'
+    },
+    link: {
+        color: theme.palette.secondary.contrast
     }
   }));
   
@@ -64,96 +69,102 @@ export default function Main() {
                 <Grid item xs={10} md={6} p={10}>
                     <Paper elevation={5} className={classes.paper} >
                         <Paper elevation={6} className={classes.paper2}>
-                            <Fade in timeout={3000} mountOnEnter unmountOnExit>
+                        <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
                                 <Typography variant="h3" className={classes.h3}>About Me</Typography>
                                 {/*<Avatar alt="Nick Kinlen" src={avatarImage} />*/}
-                            </Fade>
+                        </ScrollAnimation>
+                        <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
                             <Typography variant="body1" className={classes.typography} gutterBottom>
-                            I  am a front-end developer from NYC. I build modern, responsive web apps with React.js and am proficient in the core web languages HTML5, CSS3, Javascript, as well as many other libraries and frameworks such as Redux, Sass, Styled-Components, Mapbox,Leaflet, D3, etc... I also publish web development related articles on Hackernoon.
+                               I  am a front-end developer from NYC. I build modern, responsive web apps with React.js and am proficient in the core web languages HTML5, CSS3, Javascript, as well as many other libraries and frameworks such as Redux, Sass, Styled-Components, Mapbox,Leaflet, D3, etc... I also publish web development related articles on <Link href="https://hackernoon.com/u/nick_kinlen" className={classes.link}>Hackernoon</Link>.
                             </Typography> 
                             <Typography variant="body1" className={classes.typography}>
-                            I am passionate about all things web development, New York Rangers hockey, crypto-currency ,and entrepreneurship.Currently I am seeking a front-end role in the NYC metro area.
+                               I am passionate about all things web development, New York Rangers hockey, crypto-currency ,and entrepreneurship.Currently I am seeking a front-end role in the NYC metro area.
                             </Typography>
+                        </ScrollAnimation>
                         </Paper>
                         <Paper elevation={6} className={classes.paper2}>
-                            <Typography variant="h3" className={classes.h3} gutterBottom>Skills</Typography>
-                            <Chip 
-                                className={classes.chip} 
-                                label="HTML5" 
-                                size="medium" 
-                                variant="outlined" 
-                                color="secondary">
-                            </Chip>
-                            <Chip 
-                                className={classes.chip} 
-                                label="CSS" 
-                                size="medium" 
-                                variant="outlined" 
-                                color="secondary">    
-                            </Chip>
-                            <Chip 
-                                className={classes.chip} 
-                                label="Javascript" 
-                                size="medium" 
-                                variant="outlined" 
-                                color="secondary">
-                            </Chip>
-                            <Chip 
-                                className={classes.chip} 
-                                label="React" 
-                                size="medium" 
-                                variant="outlined" 
-                                color="secondary">
-                            </Chip>
-                            <Chip 
-                                className={classes.chip} 
-                                label="Redux" 
-                                size="medium" 
-                                variant="outlined" 
-                                color="secondary">
-                            </Chip>
-                            <Chip 
-                                className={classes.chip} 
-                                label="D3" 
-                                size="medium" 
-                                variant="outlined" 
-                                color="secondary">
-                            </Chip>
-                            <Chip 
-                                className={classes.chip} 
-                                label="Mapbox" 
-                                size="medium" 
-                                variant="outlined" 
-                                color="secondary">
-                            </Chip>
-                            <Chip 
-                                className={classes.chip} 
-                                label="Leaflet" 
-                                size="medium" 
-                                variant="outlined" 
-                                color="secondary">
-                            </Chip>
-                            <Chip 
-                                className={classes.chip} 
-                                label="Express" 
-                                size="medium" 
-                                variant="outlined" 
-                                color="secondary">
-                            </Chip>
-                            <Chip 
-                                className={classes.chip} 
-                                label="Mongoose" 
-                                size="medium" 
-                                variant="outlined" 
-                                color="secondary">
-                            </Chip>
-                            <Chip 
-                                className={classes.chip} 
-                                label="MongoDB" 
-                                size="medium" 
-                                variant="outlined" 
-                                color="secondary">
-                            </Chip>
+                            <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
+                                <Typography variant="h3" className={classes.h3} gutterBottom>Skills</Typography>
+                            </ScrollAnimation>
+                            <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
+                                <Chip 
+                                    className={classes.chip} 
+                                    label="HTML5" 
+                                    size="medium" 
+                                    variant="outlined" 
+                                    color="secondary">
+                                </Chip>
+                                <Chip 
+                                    className={classes.chip} 
+                                    label="CSS" 
+                                    size="medium" 
+                                    variant="outlined" 
+                                    color="secondary">    
+                                </Chip>
+                                <Chip 
+                                    className={classes.chip} 
+                                    label="Javascript" 
+                                    size="medium" 
+                                    variant="outlined" 
+                                    color="secondary">
+                                </Chip>
+                                <Chip 
+                                    className={classes.chip} 
+                                    label="React" 
+                                    size="medium" 
+                                    variant="outlined" 
+                                    color="secondary">
+                                </Chip>
+                                <Chip 
+                                    className={classes.chip} 
+                                    label="Redux" 
+                                    size="medium" 
+                                    variant="outlined" 
+                                    color="secondary">
+                                </Chip>
+                                <Chip 
+                                    className={classes.chip} 
+                                    label="D3" 
+                                    size="medium" 
+                                    variant="outlined" 
+                                    color="secondary">
+                                </Chip>
+                                <Chip 
+                                    className={classes.chip} 
+                                    label="Mapbox" 
+                                    size="medium" 
+                                    variant="outlined" 
+                                    color="secondary">
+                                </Chip>
+                                <Chip 
+                                    className={classes.chip} 
+                                    label="Leaflet" 
+                                    size="medium" 
+                                    variant="outlined" 
+                                    color="secondary">
+                                </Chip>
+                                <Chip 
+                                    className={classes.chip} 
+                                    label="Express" 
+                                    size="medium" 
+                                    variant="outlined" 
+                                    color="secondary">
+                                </Chip>
+                                <Chip 
+                                    className={classes.chip} 
+                                    label="Mongoose" 
+                                    size="medium" 
+                                    variant="outlined" 
+                                    color="secondary">
+                                </Chip>
+                                <Chip 
+                                    className={classes.chip} 
+                                    label="MongoDB" 
+                                    size="medium" 
+                                    variant="outlined" 
+                                    color="secondary">
+                                </Chip>
+                            </ScrollAnimation>
                             </Paper>
                     </Paper>
                 </Grid>
@@ -162,3 +173,43 @@ export default function Main() {
     );
 };
 
+/*
+.underline: {
+    transition: .3s all linear;
+    position: relative;
+    padding: .3em 0;
+    &:before, &:after {
+        content: "";
+        height: 3px;
+        width: 0%;
+        background: #D81E5B;
+        position: absolute;
+        bottom: 0;
+        transition: .2s all linear;
+    }
+    &:before {
+        left: 50%;
+    }
+    &:after {
+        right: 50%;
+    }
+    
+    &:hover {
+        color: #D81E5B;
+        &:before, &:after {
+            width: 100%;
+        }
+        &:before {
+            left: 0%;
+        }
+        &:after {
+            right: 0%;
+        }
+    }
+    &:active, &:focus {
+        color: darken(#20FC8F, 10%);
+        &:before, &:after {
+            background: darken(#20FC8F, 10%);
+        }
+    }
+    */

@@ -9,13 +9,16 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import Theme from './Theme';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab, faLinkedin, faGithub, faStackOverflow } from '@fortawesome/free-brands-svg-icons'
-import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
- 
-library.add(fab, faLinkedin, faGithub, faStackOverflow);
+import { faGem  } from '@fortawesome/free-solid-svg-icons';
+import "animate.css/animate.min.css";
+import TemporaryDrawer from './components/TemporaryDrawer';
+
+library.add(fab, faLinkedin, faGithub, faStackOverflow, faGem);
 
 function App() {
   return (
     <ThemeProvider theme={Theme}>
+        {/*<TemporaryDrawer />*/}
         <Navbar />
         <Hero />
         <Main />    

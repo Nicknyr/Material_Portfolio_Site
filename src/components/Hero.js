@@ -10,6 +10,8 @@ import Grid from '@material-ui/core/Grid';
 import { Typography } from '@material-ui/core';
 import Link from '@material-ui/core/Link';
 import * as Scroll from 'react-scroll';
+import ScrollAnimation from 'react-animate-on-scroll';
+
 
 // React-Scroll
 let ScrollLink = Scroll.Link;
@@ -59,8 +61,12 @@ export default function Main() {
         <Grid container>
             <Paper elevation={3} className={classes.root}>
                 <Paper elevation={5} className={classes.intro}>
-                    <Typography variant="h2">Hi, I'm Nick</Typography>
-                    <Typography variant="h4">A front-end web developer from NYC</Typography>
+                    <ScrollAnimation animateIn="bounceInUp" delay={500} duration={2} animateOnce>
+                        <Typography variant="h2">Hi, I'm Nick</Typography>
+                    </ScrollAnimation>
+                    <ScrollAnimation animateIn="bounceInUp" delay={1500} duration={2} animateOnce>
+                        <Typography variant="h4">A front-end web developer from NYC</Typography>
+                    </ScrollAnimation>
                     <ScrollLink
                         activeClass="active" 
                         spy={true} 
@@ -69,10 +75,12 @@ export default function Main() {
                         duration={500} 
                         to="about" 
                     >
-                        <Button variant="contained" size="medium" className={classes.button}>Learn more</Button>
+                    <ScrollAnimation animateIn="bounceInUp" delay={3000} duration={2} animateOnce>
+                        <Button variant="contained" size="medium" className={classes.button}>About me</Button>
+                    </ScrollAnimation>
                     </ScrollLink>
                 </Paper>
-                {/*<ParticlesHero />*/}
+                <ParticlesHero />
             </Paper>
         </Grid>
     );

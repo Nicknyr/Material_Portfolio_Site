@@ -9,6 +9,8 @@ import { Link } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as Scroll from 'react-scroll';
+import ScrollAnimation from 'react-animate-on-scroll';
+
 
 // React-Scroll
 let ScrollLink = Scroll.Link;

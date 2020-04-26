@@ -17,6 +17,8 @@ import IconButton from '@material-ui/core/IconButton';
 import { styled } from '@material-ui/core/styles';
 import Link from '@material-ui/core/Link';
 import * as Scroll from 'react-scroll';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import TemporaryDrawer from './TemporaryDrawer';
 
 // React-Scroll
 let ScrollLink = Scroll.Link;
@@ -60,6 +62,9 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       color: theme.palette.secondary.contrast
     }
+  },
+  gem: {
+    marginRight: '1rem'
   }
 }));
 
@@ -111,7 +116,14 @@ export default function BackToTop(props) {
                 <MenuIcon />
             </IconButton>
           */}
-            <Typography variant="h6" color="secondary">Nick Kinlen</Typography>
+            <Typography variant="h6" color="secondary">
+            <FontAwesomeIcon 
+                icon="gem"
+                size="sm"
+                color="#20FC8F"
+                className={classes.gem}/>
+              Nick Kinlen
+            </Typography>
             <Typography>
               <ul className="navLinks">
                 <ScrollLink 
@@ -157,6 +169,7 @@ export default function BackToTop(props) {
               </ul>
             </Typography>
         </Toolbar>
+        <TemporaryDrawer />
       </AppBar>
       <Toolbar id="back-to-top-anchor" />
       <ScrollTop {...props}>
