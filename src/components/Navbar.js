@@ -111,11 +111,6 @@ export default function BackToTop(props) {
       <CssBaseline />
       <AppBar className={classes.appBar}>
         <Toolbar className={classes.toolBar}>
-          {/*
-            <IconButton edge="start" color="inherit" aria-label="menu">
-                <MenuIcon />
-            </IconButton>
-          */}
             <Typography variant="h6" color="secondary">
             <FontAwesomeIcon 
                 icon="gem"

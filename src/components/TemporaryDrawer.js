@@ -15,6 +15,10 @@ import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
 import Link from '@material-ui/core/Link';
 import * as Scroll from 'react-scroll';
+import { useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { makeStyles } from '@material-ui/core/styles';
+
 
 let ScrollLink = Scroll.Link;
 let Element    = Scroll.Element;
@@ -22,8 +26,14 @@ let Events     = Scroll.Events;
 let scroll     = Scroll.animateScroll;
 let scrollSpy  = Scroll.scrollSpy;
  
-
+/*
 const styles = {
+  container: {
+    //display: 'none',
+    [theme.breakpoints.up('md')]: {
+      backgroundColor: 'red',
+    },
+  },
   fullList: {
     width: 'auto',
     background: '#1F1F1F',
@@ -31,6 +41,22 @@ const styles = {
     textTransform: 'uppercase'
   },
 };
+*/
+
+const styles = theme => ({
+  container: {
+    [theme.breakpoints.up('xl')]: {
+      //backgroundColor: 'red',
+      display: 'none',
+    },
+  },
+  fullList: {
+    width: 'auto',
+    background: '#1F1F1F',
+    color: 'snow',
+    textTransform: 'uppercase'
+  },
+});
 
 class TemporaryDrawer extends React.Component {
   state = {
@@ -45,29 +71,9 @@ class TemporaryDrawer extends React.Component {
 
   render() {
     const { classes } = this.props;
-   /*
-    const fullList = (
-      <div className={classes.fullList}>
-        <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-      </div>
-    );
-    */
+    //const theme = useTheme();
+    //const matches = useMediaQuery(theme.breakpoints.up('sm'));
+  
    const fullList = (
     <div className={classes.fullList}>
       <List>
@@ -133,7 +139,7 @@ class TemporaryDrawer extends React.Component {
   );
 
     return (
-      <div>
+      <div className={classes.container}>
         <Button onClick={this.toggleDrawer('top', true)}>
             <IconButton edge="start" color="secondary" aria-label="menu">
                 <MenuIcon />
@@ -155,4 +161,4 @@ class TemporaryDrawer extends React.Component {
 }
 
 
-export default withStyles(styles)(TemporaryDrawer);
+export default withStyles(styles, { withTheme: true })(TemporaryDrawer);
