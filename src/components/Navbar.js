@@ -51,17 +51,21 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-between'
   },
-  navLinks: {
-    background: 'red'
-  },
   links: {
     margin: '1rem',
     fontWeight: 'bold',
     textTransform: 'uppercase',
     cursor: 'pointer',
+    display: 'none',
+
     '&:hover': {
       color: theme.palette.secondary.contrast
-    }
+    },
+
+    [theme.breakpoints.up('sm')]: {
+      display: 'inline-flex',
+    },
+
   },
   gem: {
     marginRight: '1rem'
@@ -120,7 +124,6 @@ export default function BackToTop(props) {
               Nick Kinlen
             </Typography>
             <Typography>
-              <ul className="navLinks">
                 <ScrollLink 
                     activeClass="active" 
                     spy={true} 
@@ -161,10 +164,9 @@ export default function BackToTop(props) {
                 >
                   <Link className={classes.links}>Contact</Link>
                 </ScrollLink>
-              </ul>
             </Typography>
+            <TemporaryDrawer />
         </Toolbar>
-        <TemporaryDrawer />
       </AppBar>
       <Toolbar id="back-to-top-anchor" />
       <ScrollTop {...props}>

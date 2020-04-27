@@ -26,27 +26,10 @@ let Events     = Scroll.Events;
 let scroll     = Scroll.animateScroll;
 let scrollSpy  = Scroll.scrollSpy;
  
-/*
-const styles = {
-  container: {
-    //display: 'none',
-    [theme.breakpoints.up('md')]: {
-      backgroundColor: 'red',
-    },
-  },
-  fullList: {
-    width: 'auto',
-    background: '#1F1F1F',
-    color: 'snow',
-    textTransform: 'uppercase'
-  },
-};
-*/
 
 const styles = theme => ({
   container: {
-    [theme.breakpoints.up('xl')]: {
-      //backgroundColor: 'red',
+    [theme.breakpoints.up('sm')]: {
       display: 'none',
     },
   },
@@ -56,6 +39,10 @@ const styles = theme => ({
     color: 'snow',
     textTransform: 'uppercase'
   },
+  hamburger: {
+    display: 'flex',
+    order: '1'
+  }
 });
 
 class TemporaryDrawer extends React.Component {
@@ -140,7 +127,7 @@ class TemporaryDrawer extends React.Component {
 
     return (
       <div className={classes.container}>
-        <Button onClick={this.toggleDrawer('top', true)}>
+        <Button onClick={this.toggleDrawer('top', true)} className={classes.hamburger}>
             <IconButton edge="start" color="secondary" aria-label="menu">
                 <MenuIcon />
             </IconButton>

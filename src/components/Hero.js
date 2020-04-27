@@ -25,21 +25,30 @@ const useStyles = makeStyles((theme) => ({
       background: theme.palette.secondary.darkBlack,
       height: '100vh',
       width: '100%',
-      position: 'relative'
+      position: 'relative',
+
+      [theme.breakpoints.only('xs')] : {
+          //height: '100%'
+      }
     },
     intro: {
         background: theme.palette.secondary.lightBlack,
         height: 'auto',
-        width: '30rem',
-        position: 'absolute',
-        top: '8rem',
-        left: '5rem',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         color: 'snow',
         textAlign: 'left',
-        padding: '3rem 2rem'
+        padding: '3rem 2rem',
+        position: 'relative',
+        top: '10rem',
+        zIndex: '999',
+
+        [theme.breakpoints.up('sm')]: {
+            position: 'absolute',
+            top: '8rem',
+            left: '5rem',
+        },
     },
     button: {
         color: 'snow',
@@ -51,37 +60,38 @@ const useStyles = makeStyles((theme) => ({
         '&:hover': {
             background: theme.palette.secondary.contrast,
         }
-    },
-    
+    }
   }));
 
 export default function Main() {
     const classes = useStyles();
     return (
         <Grid container>
-            <Paper elevation={3} className={classes.root}>
-                <Paper elevation={5} className={classes.intro}>
-                    <ScrollAnimation animateIn="bounceInUp" delay={500} duration={2} animateOnce>
-                        <Typography variant="h2">Hi, I'm Nick</Typography>
-                    </ScrollAnimation>
-                    <ScrollAnimation animateIn="bounceInUp" delay={1500} duration={2} animateOnce>
-                        <Typography variant="h4">A front-end web developer from NYC</Typography>
-                    </ScrollAnimation>
-                    <ScrollLink
-                        activeClass="active" 
-                        spy={true} 
-                        smooth={true} 
-                        offset={50} 
-                        duration={500} 
-                        to="about" 
-                    >
-                    <ScrollAnimation animateIn="bounceInUp" delay={3000} duration={2} animateOnce>
-                        <Button variant="contained" size="medium" className={classes.button}>About me</Button>
-                    </ScrollAnimation>
-                    </ScrollLink>
+            <Grid item className={classes.root}>
+            <ParticlesHero />
+                <Paper elevation={3} className={classes.root}>
+                    <Paper elevation={5} className={classes.intro}>
+                        <ScrollAnimation animateIn="bounceInUp" delay={500} duration={2} animateOnce>
+                            <Typography variant="h2">Hi, I'm Nick</Typography>
+                        </ScrollAnimation>
+                        <ScrollAnimation animateIn="bounceInUp" delay={1500} duration={2} animateOnce>
+                            <Typography variant="h4">A front-end web developer from NYC</Typography>
+                        </ScrollAnimation>
+                        <ScrollLink
+                            activeClass="active" 
+                            spy={true} 
+                            smooth={true} 
+                            offset={50} 
+                            duration={500} 
+                            to="about" 
+                        >
+                        <ScrollAnimation animateIn="bounceInUp" delay={3000} duration={2} animateOnce>
+                            <Button variant="contained" size="medium" className={classes.button}>About me</Button>
+                        </ScrollAnimation>
+                        </ScrollLink>
+                    </Paper>
                 </Paper>
-                <ParticlesHero />
-            </Paper>
+            </Grid>
         </Grid>
     );
 };

@@ -1,21 +1,40 @@
 import React, { Component } from 'react';
 import Particles from 'react-particles-js';
+import { makeStyles } from '@material-ui/core/styles';
 
 
-class ParticlesHero extends Component {
-    constructor(props) {
-        super(props);
+const useStyles = makeStyles((theme) => ({
+  root: {
+    
+  },
+  canvasContainer: {
+    //background: 'blue',
+    height: '100%',
+    width: '100%',
+    position: 'absolute',
+    zIndex: '1',
+    //overflow: 'contain',
+    //position: 'absolute'
+  },
+  canvas: {
+    //background: 'red',
+    height: '100%',
+    width: '100%'
+    //position: 'absolute',
+    //zIndex: '-10'
+  }
+}));
 
-        this.state = {
-
-        };
-    }
-    render() {
+export default function ParticlesHero() {
+        const classes = useStyles();
         return (
-            <div>
             <Particles
+                className={classes.canvasContainer}
+                canvasClassName={classes.canvas}
+                height="100%"
+                width="100%"
                 params={{
-                     "particles": {
+                    "particles": {
                         "number": {
                           "value": 50,
                           "density": {
@@ -76,9 +95,6 @@ class ParticlesHero extends Component {
                         "mode": "bubble"
                       },
             }} />
-            </div>
         );
-    }
 }
 
-export default ParticlesHero;
