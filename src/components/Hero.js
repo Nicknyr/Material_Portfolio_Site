@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
 
       [theme.breakpoints.only('xs')] : {
           //height: '100%'
+          //top: '10rem'
       }
     },
     intro: {
@@ -41,14 +42,18 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'left',
         padding: '3rem 2rem',
         position: 'relative',
-        top: '10rem',
+        top: '8rem',
+        //left: '5rem',
         zIndex: '999',
 
-        [theme.breakpoints.up('sm')]: {
-            position: 'absolute',
-            top: '8rem',
-            left: '5rem',
+        [theme.breakpoints.only('sm')]: {
+          
         },
+        [theme.breakpoints.up('sm')]: {
+            //position: 'absolute'
+            width: '30rem',
+            left: '5rem'
+        }
     },
     button: {
         color: 'snow',
@@ -68,8 +73,8 @@ export default function Main() {
     return (
         <Grid container>
             <Grid item className={classes.root}>
-            <ParticlesHero />
-                <Paper elevation={3} className={classes.root}>
+                <ParticlesHero />
+                <Paper elevation={10} className={classes.root}>
                     <Paper elevation={5} className={classes.intro}>
                         <ScrollAnimation animateIn="bounceInUp" delay={500} duration={2} animateOnce>
                             <Typography variant="h2">Hi, I'm Nick</Typography>

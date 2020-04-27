@@ -99,7 +99,7 @@ export default function Portfolio() {
         alignItems="center" 
         id="portfolio"
         >
-        <Grid item xs={12}>
+        <Grid item xs={10}>
            <Paper elevation={5} className={classes.paper}>
                 <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
                     <Typography variant="h3" color="secondary" className={classes.h3}>Portfolio</Typography>

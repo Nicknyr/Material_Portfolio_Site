@@ -12,6 +12,7 @@ import { fab, faLinkedin, faGithub, faStackOverflow } from '@fortawesome/free-br
 import { faGem  } from '@fortawesome/free-solid-svg-icons';
 import "animate.css/animate.min.css";
 import TemporaryDrawer from './components/TemporaryDrawer';
+import Blog from './components/Blog';
 
 library.add(fab, faLinkedin, faGithub, faStackOverflow, faGem);
 
@@ -23,6 +24,7 @@ function App() {
         <Hero />
         <Main />    
         <Portfolio />
+        <Blog />
         <Footer />  
     </ThemeProvider>
   );
