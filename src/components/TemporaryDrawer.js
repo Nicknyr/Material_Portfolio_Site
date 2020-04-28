@@ -39,9 +39,13 @@ const styles = theme => ({
     color: 'snow',
     textTransform: 'uppercase'
   },
-  hamburger: {
+  hamburgerContainer: {
     display: 'flex',
-    order: '1'
+    order: '1',
+    //background: 'red'
+  },
+  hamburgerIcon: {
+    color: theme.palette.secondary.contrast,
   }
 });
 
@@ -127,9 +131,9 @@ class TemporaryDrawer extends React.Component {
 
     return (
       <div className={classes.container}>
-        <Button onClick={this.toggleDrawer('top', true)} className={classes.hamburger}>
-            <IconButton edge="start" color="secondary" aria-label="menu">
-                <MenuIcon />
+        <Button onClick={this.toggleDrawer('top', true)} className={classes.hamburgerContainer}>
+            <IconButton edge="start" aria-label="menu" className={classes.hamburgerIcon}>
+                <MenuIcon size="xl"/>
             </IconButton>
         </Button>
         <Drawer anchor="top" open={this.state.top} onClose={this.toggleDrawer('top', false)}>

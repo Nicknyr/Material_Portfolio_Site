@@ -17,7 +17,7 @@ import * as Scroll from 'react-scroll';
 import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 import ScrollAnimation from 'react-animate-on-scroll';
 
-
+/*
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
@@ -25,18 +25,18 @@ const useStyles = makeStyles((theme) => ({
       height: 'auto',
       display: 'flex',
       alignItems: 'center',
-      paddingTop: '5rem',
-      paddingBottom: '5rem'
+      //paddingTop: '5rem',
+      //paddingBottom: '5rem'
     },
     paper: {
       height: 'auto',
-      padding: theme.spacing(2),
+      //padding: theme.spacing(2),
       background: theme.palette.secondary.lightBlack
     },
     paper2: {
         height: 'auto',
-        margin:  theme.spacing(3),
-        padding: theme.spacing(2),
+        margin: theme.spacing(2),
+        padding: theme.spacing(5),
         background: theme.palette.secondary.lightBlack,
         marginBottom: '5rem',
     },
@@ -51,29 +51,71 @@ const useStyles = makeStyles((theme) => ({
         //background: theme.palette.secondary.contrast,
         background: theme.palette.secondary.darkBlack,
         color: theme.palette.primary.main,
-        margin: theme.spacing(1),
+        //margin: theme.spacing(1),
+        margin: theme.spacing(2),
         fontWeight: 'bold'
     },
     link: {
         color: theme.palette.secondary.contrast
     }
   }));
-  
+*/  
+
+const useStyles = makeStyles((theme) => ({
+    container: {
+        background: theme.palette.secondary.darkBlack,
+        height: 'auto',
+        width: '100%',
+        paddingTop: '5rem'
+    },
+    root: {
+      flexGrow: 1,
+      background: theme.palette.secondary.darkBlack,
+      height: '100vh',
+      display: 'flex',
+      alignItems: 'center',
+    },
+    paper: {
+        height: '100%',
+        background: theme.palette.secondary.lightBlack,
+        color: 'snow',
+        padding: theme.spacing(10)
+    },
+    h3: {
+        textAlign: 'center',
+        color: theme.palette.secondary.main
+    },
+    typography: {
+        lineHeight: 1.8
+    },
+    chip: {
+        margin: '.8rem',
+        color: 'snow',
+        fontWeight: 'bold'
+    }
+  }));
 
 
 export default function Main() {
     const classes = useStyles();
 
     return (
-        <div className={classes.root} id="about">
-            <Grid container justify="center" >
-                <Grid xs={12} md={10} p={10} >
-                    <Paper elevation={5} className={classes.paper} >
-                        <Grid item md={6}>
-                            <Paper elevation={6} className={classes.paper2}>
-                            <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
-                                    <Typography variant="h3" className={classes.h3}>About Me</Typography>
-                                    {/*<Avatar alt="Nick Kinlen" src={avatarImage} />*/}
+        <Grid container id="about" className={classes.container}>
+            <Box 
+                item color="primary" 
+                height="auto" 
+                width="80%"
+                bgcolor="#1F1F1F"
+                mx="auto"
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+                justifyContent="center"
+            >
+                <Box height="auto" width="80%" mx="auto" mt={20} >
+                    <Paper elevation={6} className={classes.paper}>
+                        <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
+                            <Typography variant="h3" className={classes.h3} gutterBottom>About Me</Typography>
                             </ScrollAnimation>
                             <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
                                 <Typography variant="body1" className={classes.typography} gutterBottom>
@@ -82,99 +124,98 @@ export default function Main() {
                                 <Typography variant="body1" className={classes.typography}>
                                 I am passionate about all things web development, New York Rangers hockey, crypto-currency ,and entrepreneurship.Currently I am seeking a front-end role in the NYC metro area.
                                 </Typography>
-                            </ScrollAnimation>
-                            </Paper>
-                        </Grid>
-                        <Grid item md={6}>
-                            <Paper elevation={6} className={classes.paper2}>
-                                <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
-                                    <Typography variant="h3" className={classes.h3} gutterBottom>Skills</Typography>
-                                </ScrollAnimation>
-                                <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
-                                    <Chip 
-                                        className={classes.chip} 
-                                        label="HTML5" 
-                                        size="medium" 
-                                        variant="outlined" 
-                                        color="secondary">
-                                    </Chip>
-                                    <Chip 
-                                        className={classes.chip} 
-                                        label="CSS" 
-                                        size="medium" 
-                                        variant="outlined" 
-                                        color="secondary">    
-                                    </Chip>
-                                    <Chip 
-                                        className={classes.chip} 
-                                        label="Javascript" 
-                                        size="medium" 
-                                        variant="outlined" 
-                                        color="secondary">
-                                    </Chip>
-                                    <Chip 
-                                        className={classes.chip} 
-                                        label="React" 
-                                        size="medium" 
-                                        variant="outlined" 
-                                        color="secondary">
-                                    </Chip>
-                                    <Chip 
-                                        className={classes.chip} 
-                                        label="Redux" 
-                                        size="medium" 
-                                        variant="outlined" 
-                                        color="secondary">
-                                    </Chip>
-                                    <Chip 
-                                        className={classes.chip} 
-                                        label="D3" 
-                                        size="medium" 
-                                        variant="outlined" 
-                                        color="secondary">
-                                    </Chip>
-                                    <Chip 
-                                        className={classes.chip} 
-                                        label="Mapbox" 
-                                        size="medium" 
-                                        variant="outlined" 
-                                        color="secondary">
-                                    </Chip>
-                                    <Chip 
-                                        className={classes.chip} 
-                                        label="Leaflet" 
-                                        size="medium" 
-                                        variant="outlined" 
-                                        color="secondary">
-                                    </Chip>
-                                    <Chip 
-                                        className={classes.chip} 
-                                        label="Express" 
-                                        size="medium" 
-                                        variant="outlined" 
-                                        color="secondary">
-                                    </Chip>
-                                    <Chip 
-                                        className={classes.chip} 
-                                        label="Mongoose" 
-                                        size="medium" 
-                                        variant="outlined" 
-                                        color="secondary">
-                                    </Chip>
-                                    <Chip 
-                                        className={classes.chip} 
-                                        label="MongoDB" 
-                                        size="medium" 
-                                        variant="outlined" 
-                                        color="secondary">
-                                    </Chip>
-                                </ScrollAnimation>
-                                </Paper>
-                        </Grid>
+                        </ScrollAnimation>
                     </Paper>
-                </Grid>
-            </Grid>
-        </div>
+                </Box>
+                <Box height="auto" width="80%" mx="auto" mt={20} mb={20} >
+                    <Paper elevation={6} className={classes.paper}>
+                        <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
+                            <Typography variant="h3" className={classes.h3} gutterBottom>Skills</Typography>
+                        </ScrollAnimation>
+                        <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
+                            <Chip 
+                                className={classes.chip} 
+                                label="HTML5" 
+                                size="medium" 
+                                variant="outlined" 
+                                color="secondary">
+                            </Chip>
+                            <Chip 
+                                className={classes.chip} 
+                                label="CSS" 
+                                size="medium" 
+                                variant="outlined" 
+                                color="secondary">    
+                            </Chip>
+                            <Chip 
+                                className={classes.chip} 
+                                label="Javascript" 
+                                size="medium" 
+                                variant="outlined" 
+                                color="secondary">
+                            </Chip>
+                            <Chip 
+                                className={classes.chip} 
+                                label="React" 
+                                size="medium" 
+                                variant="outlined" 
+                                color="secondary">
+                            </Chip>
+                            <Chip 
+                                className={classes.chip} 
+                                label="Redux" 
+                                size="medium" 
+                                variant="outlined" 
+                                color="secondary">
+                            </Chip>
+                            <Chip 
+                                className={classes.chip} 
+                                label="D3" 
+                                size="medium" 
+                                variant="outlined" 
+                                color="secondary">
+                            </Chip>
+                            <Chip 
+                                className={classes.chip} 
+                                label="Mapbox" 
+                                size="medium" 
+                                variant="outlined" 
+                                color="secondary">
+                            </Chip>
+                            <Chip 
+                                className={classes.chip} 
+                                label="Leaflet" 
+                                size="medium" 
+                                variant="outlined" 
+                                color="secondary">
+                            </Chip>
+                            <Chip 
+                                className={classes.chip} 
+                                label="Express" 
+                                size="medium" 
+                                variant="outlined" 
+                                color="secondary">
+                            </Chip>
+                            <Chip 
+                                className={classes.chip} 
+                                label="Mongoose" 
+                                size="medium" 
+                                variant="outlined" 
+                                color="secondary">
+                            </Chip>
+                            <Chip 
+                                className={classes.chip} 
+                                label="MongoDB" 
+                                size="medium" 
+                                variant="outlined" 
+                                color="secondary">
+                            </Chip>
+                        </ScrollAnimation>
+                    </Paper>
+                </Box>
+            </Box>
+        </Grid>
+            
     );
 };
 
@@ -218,3 +259,116 @@ export default function Main() {
         }
     }
     */
+
+
+    /*
+    <div className={classes.root} id="about">
+            <Grid container justify="center" >
+                <Grid xs={12} md={10} p={10} >
+                    <Paper elevation={5} className={classes.paper} >
+                        <Grid item md={6}>
+                            <Paper elevation={6} className={classes.paper2}>
+                            <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
+                                    <Typography variant="h3" className={classes.h3}>About Me</Typography>
+                                    </ScrollAnimation>
+                                    <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
+                                        <Typography variant="body1" className={classes.typography} gutterBottom>
+                                        I  am a front-end developer from NYC. I build modern, responsive web apps with React.js and am proficient in the core web languages HTML5, CSS3, Javascript, as well as many other libraries and frameworks such as Redux, Sass, Styled-Components, Mapbox,Leaflet, D3, etc... I also publish web development related articles on <Link href="https://hackernoon.com/u/nick_kinlen" className={classes.link}>Hackernoon</Link>.
+                                        </Typography> 
+                                        <Typography variant="body1" className={classes.typography}>
+                                        I am passionate about all things web development, New York Rangers hockey, crypto-currency ,and entrepreneurship.Currently I am seeking a front-end role in the NYC metro area.
+                                        </Typography>
+                                    </ScrollAnimation>
+                                    </Paper>
+                                </Grid>
+                                <Grid item md={6}>
+                                    <Paper elevation={6} className={classes.paper2}>
+                                        <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
+                                            <Typography variant="h3" className={classes.h3} gutterBottom>Skills</Typography>
+                                        </ScrollAnimation>
+                                        <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
+                                            <Chip 
+                                                className={classes.chip} 
+                                                label="HTML5" 
+                                                size="medium" 
+                                                variant="outlined" 
+                                                color="secondary">
+                                            </Chip>
+                                            <Chip 
+                                                className={classes.chip} 
+                                                label="CSS" 
+                                                size="medium" 
+                                                variant="outlined" 
+                                                color="secondary">    
+                                            </Chip>
+                                            <Chip 
+                                                className={classes.chip} 
+                                                label="Javascript" 
+                                                size="medium" 
+                                                variant="outlined" 
+                                                color="secondary">
+                                            </Chip>
+                                            <Chip 
+                                                className={classes.chip} 
+                                                label="React" 
+                                                size="medium" 
+                                                variant="outlined" 
+                                                color="secondary">
+                                            </Chip>
+                                            <Chip 
+                                                className={classes.chip} 
+                                                label="Redux" 
+                                                size="medium" 
+                                                variant="outlined" 
+                                                color="secondary">
+                                            </Chip>
+                                            <Chip 
+                                                className={classes.chip} 
+                                                label="D3" 
+                                                size="medium" 
+                                                variant="outlined" 
+                                                color="secondary">
+                                            </Chip>
+                                            <Chip 
+                                                className={classes.chip} 
+                                                label="Mapbox" 
+                                                size="medium" 
+                                                variant="outlined" 
+                                                color="secondary">
+                                            </Chip>
+                                            <Chip 
+                                                className={classes.chip} 
+                                                label="Leaflet" 
+                                                size="medium" 
+                                                variant="outlined" 
+                                                color="secondary">
+                                            </Chip>
+                                            <Chip 
+                                                className={classes.chip} 
+                                                label="Express" 
+                                                size="medium" 
+                                                variant="outlined" 
+                                                color="secondary">
+                                            </Chip>
+                                            <Chip 
+                                                className={classes.chip} 
+                                                label="Mongoose" 
+                                                size="medium" 
+                                                variant="outlined" 
+                                                color="secondary">
+                                            </Chip>
+                                            <Chip 
+                                                className={classes.chip} 
+                                                label="MongoDB" 
+                                                size="medium" 
+                                                variant="outlined" 
+                                                color="secondary">
+                                            </Chip>
+                                        </ScrollAnimation>
+                                        </Paper>
+                                </Grid>
+                            </Paper>
+                        </Grid>
+                    </Grid>
+                </div>
+                */

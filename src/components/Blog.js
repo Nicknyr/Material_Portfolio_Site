@@ -78,11 +78,13 @@ export default function Main() {
                                     title="NHL API"
                                     className={classes.cardHeader}
                                 />
-                                <CardMedia
-                                    className={classes.media}
-                                    image={NHL}
-                                    title="NHL API image"
-                                />
+                                <Link href="https://hackernoon.com/retrieving-hockey-stats-from-the-nhls-undocumented-api-zz3003wrw">
+                                    <CardMedia
+                                        className={classes.media}
+                                        image={NHL}
+                                        title="NHL API image"
+                                    />
+                                </Link>
                                 <CardContent>
                                     <Typography variant="body1" color="main" component="p">
                                         A how-to guide on accessing the NHL's hidden stats API to retrieve player and team stats using React, Redux, & Axios
@@ -98,11 +100,13 @@ export default function Main() {
                                     title="Formik Tutorial"
                                     className={classes.cardHeader}
                                 />
-                                <CardMedia
-                                    className={classes.media}
-                                    image={Formik}
-                                    title="Formik tutorial image"
-                                />
+                                <Link href="https://hackernoon.com/building-react-forms-with-formik-yup-and-react-bootstrap-with-a-minimal-amount-of-pain-and-suffering-1sfk3xv8">
+                                    <CardMedia
+                                        className={classes.media}
+                                        image={Formik}
+                                        title="Formik tutorial image"
+                                    />
+                                </Link>
                                 <CardContent>
                                     <Typography variant="body1" color="main" component="p">
                                         A tutorial on painlessly handling form validation in a React project using Formik and Yup

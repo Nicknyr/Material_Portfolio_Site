@@ -26,7 +26,7 @@ const Theme = createMuiTheme({
       type: 'dark',
       typography: {
          fontFamily: `'IBM Plex Mono', monospace`,
-         fontSize: 14,
+         fontSize: 15,
          h1: {
           fontFamily: `'IBM Plex Sans Condensed', sans-serif`
          },
@@ -39,7 +39,8 @@ const Theme = createMuiTheme({
          h4: {
           fontFamily: `'IBM Plex Sans Condensed', sans-serif`
          }
-      }
+      },
+      spacing: 5
 });
 
 
