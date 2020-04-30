@@ -33,64 +33,47 @@ let scrollSpy  = Scroll.scrollSpy;
 
 const useStyles = makeStyles((theme) => ({
     root: {
+        flexGrow: 1,
         background: theme.palette.secondary.darkBlack,
         height: 'auto',
-        width: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
         paddingTop: '10rem',
-        paddingBottom: '10rem'
-    },
-    paper: {
-        height: 'auto',
-        padding: theme.spacing(2),
-        background: theme.palette.secondary.lightBlack
-    },
-    paper2: {
-        height: '20rem',
-        margin: theme.spacing(10),
-        padding: theme.spacing(2),
-        background: theme.palette.secondary.lightBlack,
-        display: 'flex'
-    },
-    h3: {
-        textAlign: 'center'
-    },
-    button: {
-        background: theme.palette.secondary.contrast,
-        color: theme.palette.primary.main,
-        opacity: '.8',
+        paddingBottom: '10rem',
 
-        '&:hover': {
-            background: theme.palette.secondary.contrast,
-            opacity: '1'
+        [theme.breakpoints.up('md')]: {
+            padding: theme.spacing(10)
         }
+      },
+      container: {
+        background: theme.palette.secondary.lightBlack,
+        height: 'auto'
     },
-    left: {
-        width: '50%',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center'
-    },
-    right: {
-        width: '50%',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center'
-    },
-    buttonContainer: {
-        display: 'flex',
-        width: '100%',
-        justifyContent: 'center'
-    },
-    odd: {
-        flexDirection: 'row-reverse'
-    }
   }));
   
 
 export default function Portfolio() {
     const classes = useStyles();
     return (
-        <Grid 
+       <div className={classes.root}>
+           <Grid container xs={11} sm={10} md={10} mx="auto" display="flex" justify="center" className={classes.container}>
+            <Grid item xs={11} sm={8} md={5}>
+                <Paper elevation={10} className={classes.paper} mt={5}>
+                    
+                </Paper>
+            </Grid>
+           </Grid>
+       </div>
+    );
+}
+
+
+
+
+
+/*
+ <Grid 
         className={classes.root} 
         xs={12}
         container
@@ -209,10 +192,4 @@ export default function Portfolio() {
            </Paper>
        </Grid>
     </Grid>
-    );
-}
-
-
-
-
-
+    */

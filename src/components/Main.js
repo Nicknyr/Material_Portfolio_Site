@@ -17,69 +17,37 @@ import * as Scroll from 'react-scroll';
 import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 import ScrollAnimation from 'react-animate-on-scroll';
 
-/*
-const useStyles = makeStyles((theme) => ({
-    root: {
-      flexGrow: 1,
-      background: theme.palette.secondary.darkBlack,
-      height: 'auto',
-      display: 'flex',
-      alignItems: 'center',
-      //paddingTop: '5rem',
-      //paddingBottom: '5rem'
-    },
-    paper: {
-      height: 'auto',
-      //padding: theme.spacing(2),
-      background: theme.palette.secondary.lightBlack
-    },
-    paper2: {
-        height: 'auto',
-        margin: theme.spacing(2),
-        padding: theme.spacing(5),
-        background: theme.palette.secondary.lightBlack,
-        marginBottom: '5rem',
-    },
-    typography: {
-        color: theme.palette.primary.main
-    },
-    h3: {
-        color: theme.palette.secondary.main,
-        textAlign: 'center'
-    },
-    chip: {
-        //background: theme.palette.secondary.contrast,
-        background: theme.palette.secondary.darkBlack,
-        color: theme.palette.primary.main,
-        //margin: theme.spacing(1),
-        margin: theme.spacing(2),
-        fontWeight: 'bold'
-    },
-    link: {
-        color: theme.palette.secondary.contrast
-    }
-  }));
-*/  
 
 const useStyles = makeStyles((theme) => ({
-    container: {
+    root: {
+        flexGrow: 1,
         background: theme.palette.secondary.darkBlack,
         height: 'auto',
-        width: '100%',
-        paddingTop: '5rem'
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingTop: '10rem',
+        paddingBottom: '10rem',
+
+        [theme.breakpoints.up('md')]: {
+            padding: theme.spacing(10)
+        }
+      },
+    container: {
+        background: theme.palette.secondary.lightBlack,
+        height: 'auto'
     },
-    root: {
-      flexGrow: 1,
-      background: theme.palette.secondary.darkBlack,
-      height: '100vh',
-      display: 'flex',
-      alignItems: 'center',
+    gridItem: {
+        height: 'auto',
+
+        [theme.breakpoints.up('xs')]: {
+            padding: theme.spacing(5)
+        }
     },
     paper: {
-        height: '100%',
         background: theme.palette.secondary.lightBlack,
         color: 'snow',
-        padding: theme.spacing(10)
+        padding: theme.spacing(5)
     },
     h3: {
         textAlign: 'center',
@@ -89,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
         lineHeight: 1.8
     },
     chip: {
-        margin: '.8rem',
+        margin: '.4rem',
         color: 'snow',
         fontWeight: 'bold'
     }
@@ -100,34 +68,24 @@ export default function Main() {
     const classes = useStyles();
 
     return (
-        <Grid container id="about" className={classes.container}>
-            <Box 
-                item color="primary" 
-                height="auto" 
-                width="80%"
-                bgcolor="#1F1F1F"
-                mx="auto"
-                display="flex"
-                flexDirection="column"
-                alignItems="center"
-                justifyContent="center"
-            >
-                <Box height="auto" width="80%" mx="auto" mt={20} >
-                    <Paper elevation={6} className={classes.paper}>
-                        <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
-                            <Typography variant="h3" className={classes.h3} gutterBottom>About Me</Typography>
-                            </ScrollAnimation>
-                            <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
-                                <Typography variant="body1" className={classes.typography} gutterBottom>
-                                I  am a front-end developer from NYC. I build modern, responsive web apps with React.js and am proficient in the core web languages HTML5, CSS3, Javascript, as well as many other libraries and frameworks such as Redux, Sass, Styled-Components, Mapbox,Leaflet, D3, etc... I also publish web development related articles on <Link href="https://hackernoon.com/u/nick_kinlen" className={classes.link}>Hackernoon</Link>.
-                                </Typography> 
-                                <Typography variant="body1" className={classes.typography}>
-                                I am passionate about all things web development, New York Rangers hockey, crypto-currency ,and entrepreneurship.Currently I am seeking a front-end role in the NYC metro area.
-                                </Typography>
+        <div className={classes.root} id="about">
+        <Grid container xs={11} sm={10} md={10} mx="auto" display="flex" justify="center" className={classes.container}>
+            <Grid item xs={12} md={10} xl={6} className={classes.gridItem}>
+                <Paper elevation={6} className={classes.paper}>
+                    <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
+                        <Typography variant="h3" className={classes.h3} gutterBottom>About Me</Typography>
                         </ScrollAnimation>
-                    </Paper>
-                </Box>
-                <Box height="auto" width="80%" mx="auto" mt={20} mb={20} >
+                        <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
+                            <Typography variant="body1" className={classes.typography} gutterBottom>
+                            I  am a front-end developer from NYC. I build modern, responsive web apps with React.js and am proficient in the core web languages HTML5, CSS3, Javascript, as well as many other libraries and frameworks such as Redux, Sass, Styled-Components, Mapbox,Leaflet, D3, etc... I also publish web development related articles on <Link href="https://hackernoon.com/u/nick_kinlen" className={classes.link}>Hackernoon</Link>.
+                            </Typography> 
+                            <Typography variant="body1" className={classes.typography}>
+                            I am passionate about all things web development, New York Rangers hockey, crypto-currency ,and entrepreneurship. Currently I am seeking a front-end role in the NYC metro area.
+                            </Typography>
+                    </ScrollAnimation>
+                </Paper>
+            </Grid>
+            <Grid item xs={12} md={10} xl={6} className={classes.gridItem}>
                     <Paper elevation={6} className={classes.paper}>
                         <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
                             <Typography variant="h3" className={classes.h3} gutterBottom>Skills</Typography>
@@ -212,9 +170,9 @@ export default function Main() {
                             </Chip>
                         </ScrollAnimation>
                     </Paper>
-                </Box>
-            </Box>
+            </Grid>
         </Grid>
+    </div>
             
     );
 };
