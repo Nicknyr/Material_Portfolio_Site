@@ -50,6 +50,41 @@ const useStyles = makeStyles((theme) => ({
         background: theme.palette.secondary.lightBlack,
         height: 'auto'
     },
+    paper: {
+        background: theme.palette.secondary.lightBlack
+    },
+    h3: {
+        textAlign: 'center',
+        marginBottom: '5rem'
+    },
+    projectItem: {
+        //padding: theme.spacing(1)
+        display: 'flex',
+        alignItems: 'stretch',
+        marginBottom: '10rem',
+        padding: theme.spacing(1)
+    },
+    buttonContainer: {
+        display: 'flex',
+        alignItems: 'flex-end',
+        justifyContent: "flex-start",
+        marginTop: '3rem',
+        background: 'blue'
+    },
+    button: {
+        background: theme.palette.secondary.contrast,
+        color: theme.palette.primary.main,
+        marginRight: '.5rem',
+
+        '&:hover': {
+            background: theme.palette.secondary.contrast,
+            opacity: .8
+        }
+    },
+    odd: {
+        display: 'flex',
+        flexDirection: 'row-reverse'
+    }
   }));
   
 
@@ -58,9 +93,99 @@ export default function Portfolio() {
     return (
        <div className={classes.root}>
            <Grid container xs={11} sm={10} md={10} mx="auto" display="flex" justify="center" className={classes.container}>
-            <Grid item xs={11} sm={8} md={5}>
+            <Grid item xs={11} sm={8} md={11}>
                 <Paper elevation={10} className={classes.paper} mt={5}>
-                    
+                    <Typography variant="h3" color="secondary" className={classes.h3} gutterBottom>Projects</Typography>
+                    <Grid container display="flex" justify="center">
+                        {/* Portfolio Item */ }
+                        <Grid 
+                            item 
+                            xs={11} 
+                            display="flex" 
+                            mx="auto" 
+                            justifyContent="center" 
+                            className={classes.project}
+                        >
+                            <Paper elevation={12} className={classes.paper} mt={5}>
+                                <Grid container className={classes.projectItem}>
+                                    <Grid item xs={12} md={6}>
+                                        <img src={NPM} height="auto" width="400"/>
+                                    </Grid> 
+                                    <Grid item xs={12} md={6}>
+                                        <Typography 
+                                            variant="h4" 
+                                            color="secondary" 
+                                            justify>
+                                                NPM Clone
+                                        </Typography>
+                                        <Typography
+                                             variant="body1" 
+                                             color="primary">
+                                             My implementation of the npmjs.com website landing page. Built using React and styled-components.
+                                        </Typography>
+                                        <Grid item xs={12} className={classes.buttonContainer}>
+                                            <Button 
+                                                variant="contained" 
+                                                size="large" 
+                                                className={classes.button}>
+                                                    Code
+                                            </Button>
+                                            <Button 
+                                                variant="contained" 
+                                                size="large" 
+                                                className={classes.button}>
+                                                    View
+                                            </Button>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </Paper>
+                        </Grid>
+                        {/* Portfolio Item */ }
+                        <Grid 
+                            item 
+                            xs={11} 
+                            display="flex" 
+                            mx="auto" 
+                            justifyContent="center"
+                            className={classes.project}
+                        >
+                            <Paper elevation={12} className={classes.paper} mt={5}>
+                                <Grid container className={classes.projectItem} direction="row-reverse">
+                                    <Grid item xs={12} md={6}>
+                                        <img src={NPM} height="auto" width="400"/>
+                                    </Grid> 
+                                    <Grid item xs={12} md={6}>
+                                        <Typography 
+                                            variant="h4" 
+                                            color="secondary" 
+                                            justify>
+                                                NPM Clone
+                                        </Typography>
+                                        <Typography
+                                             variant="body1" 
+                                             color="primary">
+                                             My implementation of the npmjs.com website landing page. Built using React and styled-components.
+                                        </Typography>
+                                        <Grid item xs={12} className={classes.buttonContainer}>
+                                            <Button 
+                                                variant="contained" 
+                                                size="large" 
+                                                className={classes.button}>
+                                                    Code
+                                            </Button>
+                                            <Button 
+                                                variant="contained" 
+                                                size="large" 
+                                                className={classes.button}>
+                                                    View
+                                            </Button>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </Paper>
+                        </Grid>
+                    </Grid>
                 </Paper>
             </Grid>
            </Grid>
