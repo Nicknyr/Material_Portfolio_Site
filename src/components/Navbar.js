@@ -57,18 +57,59 @@ const useStyles = makeStyles((theme) => ({
     textTransform: 'uppercase',
     cursor: 'pointer',
     display: 'none',
+    textDecoration: 'none',
+    //color: theme.palette.secondary.contrast,
 
     '&:hover': {
-      color: theme.palette.secondary.contrast
+      textDecoration: 'none'
     },
 
     [theme.breakpoints.up('sm')]: {
-      display: 'inline-flex',
+      display: 'inline-flex'
     },
 
   },
   gem: {
     marginRight: '1rem'
+  },
+  underline: {
+    transition: '.3s all linear',
+    position: 'relative',
+    padding: '.3em 0',
+
+    '&:before, &:after': {
+        content: '""',
+        height: '3px',
+        width: '0%',
+        background: '#D81E5B',
+        position: 'absolute',
+        bottom: '0',
+        transition: '.2s all linear'
+    },
+    '&:before': {
+        left: '50%'
+    },
+    '&:after': {
+        right: '50%'
+    },
+    '&:hover': {
+        color: '#D81E5B',
+        '&:before, &:after': {
+            width: '100%'
+        },
+        '&:before': {
+            left: '0%'
+        },
+        '&:after': {
+            right: '0%'
+        }
+    },
+    '&:active, &:focus': {
+        color: 'darken(#20FC8F, 10%)',
+        '&:before, &:after': {
+            background: 'darken(#20FC8F, 10%)'
+        }
+    }
   }
 }));
 
@@ -131,8 +172,9 @@ export default function BackToTop(props) {
                     offset={50} 
                     duration={500} 
                     to="about" 
+                    //className={classes.underline}
                 >
-                  <Link className={classes.links}>About</Link>
+                  <Link className={[classes.underline, classes.links]}>About</Link>
                 </ScrollLink>
                 <ScrollLink
                     activeClass="active" 
@@ -142,7 +184,7 @@ export default function BackToTop(props) {
                     duration={500} 
                     to="portfolio" 
                 >
-                  <Link className={classes.links}>Portfolio</Link>
+                  <Link className={[classes.underline, classes.links]}>Portfolio</Link>
                 </ScrollLink>
                 <ScrollLink
                     activeClass="active" 
@@ -152,7 +194,7 @@ export default function BackToTop(props) {
                     duration={500} 
                     to="blog" 
                 >
-                  <Link className={classes.links}>Blog</Link>
+                  <Link className={[classes.underline, classes.links]}>Blog</Link>
                 </ScrollLink>
                 <ScrollLink
                     activeClass="active" 
@@ -162,7 +204,7 @@ export default function BackToTop(props) {
                     duration={500} 
                     to="contact" 
                 >
-                  <Link className={classes.links}>Contact</Link>
+                  <Link className={[classes.underline, classes.links]}>Contact</Link>
                 </ScrollLink>
             </Typography>
             <TemporaryDrawer />

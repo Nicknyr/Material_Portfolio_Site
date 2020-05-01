@@ -62,14 +62,15 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'stretch',
         marginBottom: '10rem',
-        padding: theme.spacing(1)
+        padding: theme.spacing(3),
+        height: 'auto',
     },
     buttonContainer: {
         display: 'flex',
         alignItems: 'flex-end',
         justifyContent: "flex-start",
-        marginTop: '3rem',
-        background: 'blue'
+        marginTop: '2rem',
+        //background: 'blue'
     },
     button: {
         background: theme.palette.secondary.contrast,
