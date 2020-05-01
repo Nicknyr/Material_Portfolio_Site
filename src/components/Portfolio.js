@@ -106,6 +106,7 @@ export default function Portfolio() {
                             justifyContent="center" 
                             className={classes.project}
                         >
+                        <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
                             <Paper elevation={12} className={classes.paper} mt={5}>
                                 <Grid container className={classes.projectItem}>
                                     <Grid item xs={12} md={6}>
@@ -140,6 +141,7 @@ export default function Portfolio() {
                                     </Grid>
                                 </Grid>
                             </Paper>
+                        </ScrollAnimation>
                         </Grid>
                         {/* Portfolio Item */ }
                         <Grid 
@@ -150,22 +152,23 @@ export default function Portfolio() {
                             justifyContent="center"
                             className={classes.project}
                         >
+                        <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
                             <Paper elevation={12} className={classes.paper} mt={5}>
                                 <Grid container className={classes.projectItem} direction="row-reverse">
                                     <Grid item xs={12} md={6}>
-                                        <img src={NPM} height="auto" width="400"/>
+                                        <img src={Bitcoin} height="auto" width="400"/>
                                     </Grid> 
                                     <Grid item xs={12} md={6}>
                                         <Typography 
                                             variant="h4" 
                                             color="secondary" 
                                             justify>
-                                                NPM Clone
+                                                Bitcoin Price Graph
                                         </Typography>
                                         <Typography
                                              variant="body1" 
                                              color="primary">
-                                             My implementation of the npmjs.com website landing page. Built using React and styled-components.
+                                             A D3.js line graph that pulls Bitcoin price data from the Crypto API and charts prices.
                                         </Typography>
                                         <Grid item xs={12} className={classes.buttonContainer}>
                                             <Button 
@@ -184,7 +187,188 @@ export default function Portfolio() {
                                     </Grid>
                                 </Grid>
                             </Paper>
-                        </Grid>
+                        </ScrollAnimation>
+                        <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
+                            <Paper elevation={12} className={classes.paper} mt={5}>
+                                <Grid container className={classes.projectItem}>
+                                    <Grid item xs={12} md={6}>
+                                        <img src={Euro} height="auto" width="400"/>
+                                    </Grid> 
+                                    <Grid item xs={12} md={6}>
+                                        <Typography 
+                                            variant="h4" 
+                                            color="secondary" 
+                                            justify>
+                                                European GDP
+                                        </Typography>
+                                        <Typography
+                                             variant="body1" 
+                                             color="primary">
+                                              A choropleth map that shows European Gross Domestic Product by country. Built with Mapbox and Leaflet
+                                        </Typography>
+                                        <Grid item xs={12} className={classes.buttonContainer}>
+                                            <Button 
+                                                variant="contained" 
+                                                size="large" 
+                                                className={classes.button}>
+                                                    Code
+                                            </Button>
+                                            <Button 
+                                                variant="contained" 
+                                                size="large" 
+                                                className={classes.button}>
+                                                    View
+                                            </Button>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </Paper>
+                        </ScrollAnimation>
+                        <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
+                            <Paper elevation={12} className={classes.paper} mt={5}>
+                                <Grid container className={classes.projectItem} direction="row-reverse">
+                                    <Grid item xs={12} md={6}>
+                                        <img src={Brochure} height="auto" width="400"/>
+                                    </Grid> 
+                                    <Grid item xs={12} md={6}>
+                                        <Typography 
+                                            variant="h4" 
+                                            color="secondary" 
+                                            justify>
+                                                Brochure Site
+                                        </Typography>
+                                        <Typography
+                                             variant="body1" 
+                                             color="primary">
+                                              A brochure styled website for a ficticious web development agency built with React and Styled-Components.
+                                        </Typography>
+                                        <Grid item xs={12} className={classes.buttonContainer}>
+                                            <Button 
+                                                variant="contained" 
+                                                size="large" 
+                                                className={classes.button}>
+                                                    Code
+                                            </Button>
+                                            <Button 
+                                                variant="contained" 
+                                                size="large" 
+                                                className={classes.button}>
+                                                    View
+                                            </Button>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </Paper>
+                        </ScrollAnimation>
+                        <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
+                            <Paper elevation={12} className={classes.paper} mt={5}>
+                                <Grid container className={classes.projectItem}>
+                                    <Grid item xs={12} md={6}>
+                                        <img src={Spacex} height="auto" width="400"/>
+                                    </Grid> 
+                                    <Grid item xs={12} md={6}>
+                                        <Typography 
+                                            variant="h4" 
+                                            color="secondary" 
+                                            justify>
+                                                SpaceX Facilities
+                                        </Typography>
+                                        <Typography
+                                             variant="body1" 
+                                             color="primary">
+                                               A React app that plots SpaceX and NASA facilities on a map of the U.S. using a Mapbox map and Leaflet.js.
+                                        </Typography>
+                                        <Grid item xs={12} className={classes.buttonContainer}>
+                                            <Button 
+                                                variant="contained" 
+                                                size="large" 
+                                                className={classes.button}>
+                                                    Code
+                                            </Button>
+                                            <Button 
+                                                variant="contained" 
+                                                size="large" 
+                                                className={classes.button}>
+                                                    View
+                                            </Button>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </Paper>
+                        </ScrollAnimation>
+                        <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
+                            <Paper elevation={12} className={classes.paper} mt={5}>
+                                <Grid container className={classes.projectItem} direction="row-reverse">
+                                    <Grid item xs={12} md={6}>
+                                        <img src={Top100} height="auto" width="400"/>
+                                    </Grid> 
+                                    <Grid item xs={12} md={6}>
+                                        <Typography 
+                                            variant="h4" 
+                                            color="secondary" 
+                                            justify>
+                                                iTunes Top 100
+                                        </Typography>
+                                        <Typography
+                                             variant="body1" 
+                                             color="primary">
+                                               React app that pulls data from the iTunes API and displays the top 100 albums being purchased on iTunes. Displays the top 100 albums in descending order or sorted by release date.
+                                        </Typography>
+                                        <Grid item xs={12} className={classes.buttonContainer}>
+                                            <Button 
+                                                variant="contained" 
+                                                size="large" 
+                                                className={classes.button}>
+                                                    Code
+                                            </Button>
+                                            <Button 
+                                                variant="contained" 
+                                                size="large" 
+                                                className={classes.button}>
+                                                    View
+                                            </Button>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </Paper>
+                        </ScrollAnimation>
+                        <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
+                            <Paper elevation={12} className={classes.paper} mt={5}>
+                                <Grid container className={classes.projectItem}>
+                                    <Grid item xs={12} md={6}>
+                                        <img src={RecipeBox} height="auto" width="400"/>
+                                    </Grid> 
+                                    <Grid item xs={12} md={6}>
+                                        <Typography 
+                                            variant="h4" 
+                                            color="secondary" 
+                                            justify>
+                                                Recipe Box
+                                        </Typography>
+                                        <Typography
+                                             variant="body1" 
+                                             color="primary">
+                                               A simple React to-do-list style app that allows users to add/edit/delete recipes in state. Built using React-Bootstrap.
+                                        </Typography>
+                                        <Grid item xs={12} className={classes.buttonContainer}>
+                                            <Button 
+                                                variant="contained" 
+                                                size="large" 
+                                                className={classes.button}>
+                                                    Code
+                                            </Button>
+                                            <Button 
+                                                variant="contained" 
+                                                size="large" 
+                                                className={classes.button}>
+                                                    View
+                                            </Button>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </Paper>
+                        </ScrollAnimation>
+                    </Grid>
                     </Grid>
                 </Paper>
             </Grid>
@@ -194,127 +378,3 @@ export default function Portfolio() {
 }
 
 
-
-
-
-/*
- <Grid 
-        className={classes.root} 
-        xs={12}
-        container
-        direction="row"
-        justify="center"
-        alignItems="center" 
-        id="portfolio"
-        >
-        <Grid item xs={10}>
-           <Paper elevation={5} className={classes.paper}>
-                <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
-                    <Typography variant="h3" color="secondary" className={classes.h3}>Portfolio</Typography>
-                </ScrollAnimation>
-                <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
-                <Paper elevation={6} className={classes.paper2} gutterBottom>
-                    <div className={classes.left}>
-                        <img src={NPM} height="auto" width="400"/>
-                    </div>
-                    <div className={classes.right}>
-                        <Typography variant="h4" color="secondary" justify>NPM Clone</Typography>
-                        <Typography variant="body1" color="primary">
-                        My implementation of the npmjs.com website landing page. Built using React and styled-components.
-                        </Typography>
-                        <div className={classes.buttonContainer}>
-                            <Button variant="contained" size="large" className={classes.button}>Code</Button>
-                            <Button variant="contained" size="large" className={classes.button}>View</Button>
-                        </div>
-                    </div>
-                </Paper>
-                </ScrollAnimation>
-                <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
-                    <Paper elevation={6} className={[classes.paper2, classes.odd]} gutterBottom>
-                        <div className={classes.left}>
-                            <img src={Euro} height="auto" width="400"/>
-                        </div>
-                        <div className={classes.right}>
-                            <Typography variant="h4" color="secondary" justify>European GDP</Typography>
-                            <Typography variant="body1" color="primary">
-                            A choropleth map that shows European Gross Domestic Product by country. Built with Mapbox and Leaflet
-                            </Typography>
-                            <div className={classes.buttonContainer}>
-                                <Button variant="contained" size="large" className={classes.button}>Code</Button>
-                                <Button variant="contained" size="large" className={classes.button}>View</Button>
-                            </div>
-                        </div>
-                    </Paper>
-                </ScrollAnimation>
-                <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
-                    <Paper elevation={6} className={classes.paper2} gutterBottom>
-                        <div className={classes.left}>
-                            <img src={Brochure} height="auto" width="400"/>
-                        </div>
-                        <div className={classes.right}>
-                            <Typography variant="h4" color="secondary" justify>Brochure Style Site</Typography>
-                            <Typography variant="body1" color="primary">
-                            A brochure styled website for a ficticious web development agency built with React and Styled-Components.
-                            </Typography>
-                            <div className={classes.buttonContainer}>
-                                <Button variant="contained" size="large" className={classes.button}>Code</Button>
-                                <Button variant="contained" size="large" className={classes.button}>View</Button>
-                            </div>
-                        </div>
-                    </Paper>
-                </ScrollAnimation>
-                <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
-                    <Paper elevation={6} className={[classes.paper2, classes.odd]} gutterBottom>
-                        <div className={classes.left}>
-                            <img src={Spacex} height="auto" width="400"/>
-                        </div>
-                        <div className={classes.right}>
-                            <Typography variant="h4" color="secondary" justify>SpaceX Facilities</Typography>
-                            <Typography variant="body1" color="primary">
-                                A React app that plots SpaceX and NASA facilities on a map of the U.S. using a Mapbox map and Leaflet.js.
-                            </Typography>
-                            <div className={classes.buttonContainer}>
-                                <Button variant="contained" size="large" className={classes.button}>Code</Button>
-                                <Button variant="contained" size="large" className={classes.button}>View</Button>
-                            </div>
-                        </div>
-                    </Paper>
-                </ScrollAnimation>
-                <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
-                    <Paper elevation={6} className={classes.paper2} gutterBottom>
-                        <div className={classes.left}>
-                            <img src={Top100} height="auto" width="400"/>
-                        </div>
-                        <div className={classes.right}>
-                            <Typography variant="h4" color="secondary" justify>iTunes Top 100</Typography>
-                            <Typography variant="body1" color="primary">
-                                React app that pulls data from the iTunes API and displays the top 100 albums being purchased on iTunes. Displays the top 100 albums in descending order or sorted by release date.
-                            </Typography>
-                            <div className={classes.buttonContainer}>
-                                <Button variant="contained" size="large" className={classes.button}>Code</Button>
-                                <Button variant="contained" size="large" className={classes.button}>View</Button>
-                            </div>
-                        </div>
-                    </Paper>
-                </ScrollAnimation>
-                <ScrollAnimation animateIn="fadeIn" delay={500} duration={2} animateOnce>
-                    <Paper elevation={6} className={[classes.paper2, classes.odd]} gutterBottom>
-                        <div className={classes.left}>
-                            <img src={RecipeBox} height="auto" width="400"/>
-                        </div>
-                        <div className={classes.right}>
-                            <Typography variant="h4" color="secondary" justify>React Recipe Box</Typography>
-                            <Typography variant="body1" color="primary">
-                                A simple React to-do-list style app that allows users to add/edit/delete recipes in state. Built using React-Bootstrap.
-                            </Typography>
-                            <div className={classes.buttonContainer}>
-                                <Button variant="contained" size="large" className={classes.button}>Code</Button>
-                                <Button variant="contained" size="large" className={classes.button}>View</Button>
-                            </div>
-                        </div>
-                    </Paper>
-                </ScrollAnimation>
-           </Paper>
-       </Grid>
-    </Grid>
-    */
