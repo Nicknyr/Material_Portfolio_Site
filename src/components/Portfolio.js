@@ -55,15 +55,28 @@ const useStyles = makeStyles((theme) => ({
     },
     h3: {
         textAlign: 'center',
-        marginBottom: '5rem'
+        marginTop: '2.5rem',
+        marginBottom: '2.5rem'
+    },
+    h4: {
+        paddingBottom: '10rem'
     },
     projectItem: {
         //padding: theme.spacing(1)
         display: 'flex',
-        alignItems: 'stretch',
+        //alignItems: 'stretch',
         marginBottom: '10rem',
         padding: theme.spacing(3),
+        //height: '20rem',
         height: 'auto',
+        alignItems: 'center'
+    },
+    projectDetails: {
+        //background: 'red',
+        height: 'auto',
+        padding: theme.spacing(3),
+        //display: 'flex',
+        //alignItems: 'flex-start'
     },
     buttonContainer: {
         display: 'flex',
@@ -95,7 +108,7 @@ export default function Portfolio() {
        <div className={classes.root}>
            <Grid container xs={11} sm={10} md={10} mx="auto" display="flex" justify="center" className={classes.container}>
             <Grid item xs={11} sm={8} md={11}>
-                <Paper elevation={10} className={classes.paper} mt={5}>
+               
                     <Typography variant="h3" color="secondary" className={classes.h3} gutterBottom>Projects</Typography>
                     <Grid container display="flex" justify="center">
                         {/* Portfolio Item */ }
@@ -111,9 +124,9 @@ export default function Portfolio() {
                             <Paper elevation={12} className={classes.paper} mt={5}>
                                 <Grid container className={classes.projectItem}>
                                     <Grid item xs={12} md={6}>
-                                        <img src={NPM} height="auto" width="400"/>
+                                        <img src={NPM} height="auto" width="100%"/>
                                     </Grid> 
-                                    <Grid item xs={12} md={6}>
+                                    <Grid item xs={12} md={6} className={classes.projectDetails}>
                                         <Typography 
                                             variant="h4" 
                                             color="secondary" 
@@ -157,9 +170,9 @@ export default function Portfolio() {
                             <Paper elevation={12} className={classes.paper} mt={5}>
                                 <Grid container className={classes.projectItem} direction="row-reverse">
                                     <Grid item xs={12} md={6}>
-                                        <img src={Bitcoin} height="auto" width="400"/>
+                                        <img src={Bitcoin} height="auto" width="100%"/>
                                     </Grid> 
-                                    <Grid item xs={12} md={6}>
+                                    <Grid item xs={12} md={6} className={classes.projectDetails}>
                                         <Typography 
                                             variant="h4" 
                                             color="secondary" 
@@ -193,9 +206,9 @@ export default function Portfolio() {
                             <Paper elevation={12} className={classes.paper} mt={5}>
                                 <Grid container className={classes.projectItem}>
                                     <Grid item xs={12} md={6}>
-                                        <img src={Euro} height="auto" width="400"/>
+                                        <img src={Euro} height="auto" width="100%"/>
                                     </Grid> 
-                                    <Grid item xs={12} md={6}>
+                                    <Grid item xs={12} md={6} className={classes.projectDetails}>
                                         <Typography 
                                             variant="h4" 
                                             color="secondary" 
@@ -229,9 +242,9 @@ export default function Portfolio() {
                             <Paper elevation={12} className={classes.paper} mt={5}>
                                 <Grid container className={classes.projectItem} direction="row-reverse">
                                     <Grid item xs={12} md={6}>
-                                        <img src={Brochure} height="auto" width="400"/>
+                                        <img src={Brochure} height="auto" width="100%"/>
                                     </Grid> 
-                                    <Grid item xs={12} md={6}>
+                                    <Grid item xs={12} md={6} className={classes.projectDetails}>
                                         <Typography 
                                             variant="h4" 
                                             color="secondary" 
@@ -265,9 +278,9 @@ export default function Portfolio() {
                             <Paper elevation={12} className={classes.paper} mt={5}>
                                 <Grid container className={classes.projectItem}>
                                     <Grid item xs={12} md={6}>
-                                        <img src={Spacex} height="auto" width="400"/>
+                                        <img src={Spacex} height="auto" width="100%"/>
                                     </Grid> 
-                                    <Grid item xs={12} md={6}>
+                                    <Grid item xs={12} md={6} className={classes.projectDetails}>
                                         <Typography 
                                             variant="h4" 
                                             color="secondary" 
@@ -301,9 +314,9 @@ export default function Portfolio() {
                             <Paper elevation={12} className={classes.paper} mt={5}>
                                 <Grid container className={classes.projectItem} direction="row-reverse">
                                     <Grid item xs={12} md={6}>
-                                        <img src={Top100} height="auto" width="400"/>
+                                        <img src={Top100} height="auto" width="100%"/>
                                     </Grid> 
-                                    <Grid item xs={12} md={6}>
+                                    <Grid item xs={12} md={6} className={classes.projectDetails}>
                                         <Typography 
                                             variant="h4" 
                                             color="secondary" 
@@ -313,7 +326,7 @@ export default function Portfolio() {
                                         <Typography
                                              variant="body1" 
                                              color="primary">
-                                               React app that pulls data from the iTunes API and displays the top 100 albums being purchased on iTunes. Displays the top 100 albums in descending order or sorted by release date.
+                                               React app that pulls data from the iTunes API and displays the top 100 albums being purchased on iTunes.
                                         </Typography>
                                         <Grid item xs={12} className={classes.buttonContainer}>
                                             <Button 
@@ -337,9 +350,9 @@ export default function Portfolio() {
                             <Paper elevation={12} className={classes.paper} mt={5}>
                                 <Grid container className={classes.projectItem}>
                                     <Grid item xs={12} md={6}>
-                                        <img src={RecipeBox} height="auto" width="400"/>
+                                        <img src={RecipeBox} height="auto" width="100%"/>
                                     </Grid> 
-                                    <Grid item xs={12} md={6}>
+                                    <Grid item xs={12} md={6} className={classes.projectDetails}>
                                         <Typography 
                                             variant="h4" 
                                             color="secondary" 
@@ -371,7 +384,7 @@ export default function Portfolio() {
                         </ScrollAnimation>
                     </Grid>
                     </Grid>
-                </Paper>
+
             </Grid>
            </Grid>
        </div>
